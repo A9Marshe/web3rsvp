@@ -20,6 +20,7 @@
   "author": "30daysofweb3 content",
   "license": "ISC",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
     "hardhat": "^2.10.2"
   }
 }
