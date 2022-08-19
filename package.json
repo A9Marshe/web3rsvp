@@ -4,7 +4,7 @@
   "description": "a decentralised applicatino for creating reservations for events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/run.js"
   },
   "keywords": [
     "web3",
