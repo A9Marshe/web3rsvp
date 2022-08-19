@@ -6,6 +6,22 @@ import "hardhat/console.sol";
 
 contract Web3RSVP{
 
+    event NewEventCreated(
+    bytes32 eventID,
+    address creatorAddress,
+    uint256 eventTimestamp,
+    uint256 maxCapacity,
+    uint256 deposit,
+    string eventDataCID
+    );
+
+    event NewRSVP(bytes32 eventID, address attendeeAddress);
+
+    event ConfirmedAttendee(bytes32 eventID, address attendeeAddress);
+
+    event DepositsPaidOut(bytes32 eventID);
+
+
     struct CreateEvent{
         bytes32 eventId;
         string eventDataCID;
@@ -56,13 +72,21 @@ contract Web3RSVP{
             claimedRSVPs,
             false
         );
+        emit NewEventCreated(
+            eventId,
+            msg.sender,
+            eventTimestamp,
+            maxCapacity,
+            deposit,
+            eventDataCID
+        ); 
     }
 
     //making reservation for an event
     function createNewRSVP(bytes32 eventId) external payable{
 
         //look up event from our mapping
-        CreateEvent storage myEvent = idToEvent[eventID];
+        CreateEvent storage myEvent = idToEvent[eventId];
 
         // transfer deposit to our contract / require that they send in enough ETH to cover the deposit requirement of this specific event
         require(msg.value == myEvent.deposit, "NOT ENOUGH");
@@ -81,6 +105,7 @@ contract Web3RSVP{
         }
 
         myEvent.confirmedRSVPs.push(payable(msg.sender));
+        emit NewRSVP(eventId, msg.sender);
 
     }  
 
@@ -124,6 +149,8 @@ contract Web3RSVP{
     }
 
     require(sent, "Failed to send Ether");
+
+    emit ConfirmedAttendee(eventId, attendee);
     }
     
     //confirming all attendees at once
@@ -172,6 +199,7 @@ contract Web3RSVP{
             myEvent.paidOut = false;
         }
         require(sent, "Failed to send Ether");
+        emit DepositsPaidOut(eventId);
     }
 
 }
