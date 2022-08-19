@@ -18,5 +18,8 @@
     "react"
   ],
   "author": "30daysofweb3 content",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "hardhat": "^2.10.2"
+  }
 }
