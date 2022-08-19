@@ -1,0 +1,22 @@
+{
+  "name": "web3rsvp",
+  "version": "1.0.0",
+  "description": "a decentralised applicatino for creating reservations for events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web3",
+    "smart",
+    "contracts",
+    "graph",
+    "subgraph",
+    "decentralised",
+    "events",
+    "rsvp",
+    "react"
+  ],
+  "author": "30daysofweb3 content",
+  "license": "ISC"
+}
