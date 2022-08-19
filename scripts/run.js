@@ -18,7 +18,7 @@ const main = async () => {
     "bafybeibhwfzx6oo5rymsxmkdxpmkfwyvbjrrwcl7cekmbzlupmp5ypkyfi";
 
   //making the transaction
-  let txn = await rsvpContract.createNewEvent(
+  let txn = await rsvpContract.CreateNewEvent(
     timestamp,
     deposit,
     maxCapacity,
@@ -37,7 +37,7 @@ const main = async () => {
   //making new RSVP using three different addresses `.connect(address)`
   txn = await rsvpContract.createNewRSVP(eventID, { value: deposit });
   wait = await txn.wait();
-  console.log("NEW RSVP: ", wait.events[0].event, wait.event[0].args);
+  console.log("NEW RSVP: ", wait.events[0].event, wait.events[0].args);
 
   txn = await rsvpContract
     .connect(address1)
