@@ -4,7 +4,8 @@
   "description": "a decentralised applicatino for creating reservations for events",
   "main": "index.js",
   "scripts": {
-    "test": "node scripts/run.js"
+    "test": "node scripts/run.js",
+    "deploy": "npx hardhat run scripts/deploy.js --network mumbai"
   },
   "keywords": [
     "web3",
@@ -22,5 +23,8 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.1.1",
     "hardhat": "^2.10.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
   }
 }
