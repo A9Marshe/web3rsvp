@@ -11,8 +11,8 @@ module.exports = {
     mumbai: {
       url: process.env.STAGING_ALCHEMY_URL,
       accounts: [`0x${process.env.STAGING_PRIVATE_KEY}`],
-      gas: 2100000,
-      gasPrice: 8000000000,
+      gas: 2100000000,
+      gasPrice: 80000000000,
     },
   },
 };

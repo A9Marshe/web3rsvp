@@ -2,8 +2,12 @@ const hre = require("hardhat");
 
 const main = async () => {
   const rsvpContractFactory = await hre.ethers.getContractFactory("Web3RSVP");
-  const rsvpContract = await rsvpContractFactory.deploy({ nonce: 10 });
-  await rsvpContract.deployed();
+  const rsvpContract = await rsvpContractFactory.deploy();
+  try {
+    await rsvpContract.deployed();
+  } catch (err) {
+    console.error("GOT ERROR HERHEHRHERHHE!: ", err);
+  }
   console.log("Contract deployed to:", rsvpContract.address);
 };
 
