@@ -1,13 +1,6 @@
-# Sample Hardhat Project
+# Web3RSVP is a decentralised events managing service that uses IPFS, The Graph (GRT) and Solidity smart contracts and runs on Polygon Mumbai testnet.   
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project follows the 30daysofweb curriculum, learn more at: https://www.30daysofweb3.xyz
 
-Try running some of the following tasks:
+This Repo contains the smart contract (Web3RSVP.sol) alongside needed Hardhat configs and scripts to run on Mumbai.
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
